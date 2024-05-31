@@ -21,9 +21,5 @@ class UsuarioController
         return false;
     }
 
-    function __destruct()
-    {
-        $this->db->close();
-    }
 }
 ?>

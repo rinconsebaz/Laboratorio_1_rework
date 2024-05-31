@@ -22,9 +22,6 @@ class ArticuloController
         return $articulos;
     }
 
-    function __destruct()
-    {
-        $this->db->close();
-    }
+   
 }
 ?>

@@ -27,9 +27,13 @@ class ClienteController
         return $this->db->execSql($sql);
     }
 
-    function __destruct()
+    public function obtenerClientePorDocumento($numeroDocumento, $tipoDocumento)
     {
-        $this->db->close();
+        $sql = "SELECT * FROM clientes WHERE numeroDocumento='$numeroDocumento' AND tipoDocumento='$tipoDocumento'";
+        $result = $this->execSQL($sql);
+        return $result->fetch_assoc();
     }
+
+  
 }
 ?>

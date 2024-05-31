@@ -30,8 +30,5 @@ class ConexionDBController
         return $this->conex->query($sql);
     }
 
-    function close()
-    {
-        $this->conex->close();
-    }
+   
 }

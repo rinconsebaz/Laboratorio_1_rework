@@ -65,9 +65,31 @@ class FacturaController
         return $this->db->execSql($sql);
     }
 
-    function __destruct()
-    {
-        $this->db->close();
+    public function consultarFacturasAnteriores() {
+        $sql = "SELECT * FROM facturas";
+        $result = $this->db->execSql($sql);
+        $facturas = [];
+        while ($row = $result->fetch_assoc()) {
+            $facturas[] = $row;
+        }
+        return $facturas;
     }
+
+    public function consultarDetalleFacturaAnterior($referencia) {
+        // Consultar los detalles de la factura
+        $sql = "SELECT df.*, a.nombre AS nombre_articulo
+                FROM detalleFacturas df
+                INNER JOIN articulos a ON df.idArticulo = a.id
+                WHERE df.referenciaFactura = '$referencia'";
+        $result = $this->db->execSql($sql);
+        $detalles = [];
+        while ($row = $result->fetch_assoc()) {
+            $detalles[] = $row;
+        }
+    
+        return $detalles;
+    }
+    
+
 }
 ?>
