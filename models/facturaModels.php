@@ -1,5 +1,6 @@
 <?php
-namespace App\models;
+
+namespace App\Models;
 
 class Factura {
     private $referencia;
@@ -8,26 +9,30 @@ class Factura {
     private $estado;
     private $descuento;
 
-        public function __construct($referencia, $fecha, $idCliente, $estado, $descuento) {
-            $this->referencia = $referencia;
-            $this->fecha = $fecha;
-            $this->idCliente = $idCliente;
-            $this->estado = $estado;
-            $this->descuento = $descuento;
-        }
+    public function __construct($referencia, $fecha, $idCliente, $estado, $descuento) {
+        $this->referencia = $referencia;
+        $this->fecha = $fecha;
+        $this->idCliente = $idCliente;
+        $this->estado = $estado;
+        $this->descuento = $descuento;
+    }
 
     public function getReferencia() {
         return $this->referencia;
     }
+
     public function getFecha() {
         return $this->fecha;
     }
+
     public function getIdCliente() {
         return $this->idCliente;
     }
+
     public function getEstado() {
         return $this->estado;
     }
+
     public function getDescuento() {
         return $this->descuento;
     }
