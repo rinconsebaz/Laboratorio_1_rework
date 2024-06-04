@@ -1,8 +1,8 @@
 <?php
 
-use app\controllers\database\ConexionDBController;
+use App\controllers\database\ConexionDBController;
 
-require '../controllers/database/ConexionDBController.php';
+require '/controllers/database/ConexionDBController.php';
 
 $conexionDB = new ConexionDBController();
 
